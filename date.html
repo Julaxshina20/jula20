@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>news</title>
+</head>
+ <body>
+<header style=" background: rgb(47, 6, 85);
+color: white;
+text-align: center;
+padding: 20px 0;">
+
+    <div style="text-align: center;"> 
+    <div id="time"  style="font-size: 20px;">  </div>  
+    <div id="google_translate_element"style="font-size: 20px;"></div>
+          <script>
+              function updateTime() {
+                 const date = new Date();
+                 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                 const time = date.toLocaleTimeString();
+                 const day = date.toLocaleDateString(undefined, options);
+                 document.getElementById('time').innerHTML = ` ${day}   ||  Time:${time}`;}
+                 setInterval(updateTime, 1000);
+                 updateTime(); 
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en', // Language of your page's content
+          includedLanguages: 'en,si,ta', // Languages you want to include
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          autoDisplay: false,
+          multilanguagePage: true
+        }, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript">
+        // Force the translate UI to be in English
+        (function() {
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit&ui=en';
+          document.body.appendChild(script);
+        })();
+    
+                  // Once the page content is dynamically updated, refresh Google Translate
+         function refreshGoogleTranslate() {
+                  // Wait for Google Translate to finish loading and then re-apply it
+             if (typeof google !== "undefined" && google.translate && google.translate.TranslateElement) {
+             google.translate.TranslateElement.prototype.showBanner(); }}
+    
+      </script>
+                  <h1 style="font-size: 50px;">The Daily News</h1>
+                     
+                  
+                </div>     
+   </header>
+   <div id="content">
+    <div class="news-container">
+        <div class="news-article">
+        <h1 style="font-size: 40px;"> Burhani Serendib School celebrates 42 years with Global Robotics opportunity <hr>  </h1>
+        <div style="display: flex; align-items: center;">
+            <img src="a6.jpg" alt="News Image"style="width: 500px; height: auto; margin-right: 20px;"> </div>
+        <p style="font-size: 25px;">In line with the 42nd anniversary, Burhani Serendib School is all set to launch an initiative to empower Sri Lankan students in the fields of STEAM education and robotics by hosting a national selection for the internationally acclaimed World Robot Olympiad (WRO). 
+
+            The event, targeting future innovators will bring together students from various age groups in a bid to foster creativity, technical prowess, and international exposure.
+            
+            The competition is open to students across three age brackets, ranging from elementary school pupils aged 8 to 12, junior students aged 11 to 15, and seniors between 14 and 19 years of age. 
+            
+            Further, participants will form teams of two to three members, each guided by a coach to navigate the challenges of this high-profile event. The culmination of the competition will be the WRO 2025 Finals, scheduled for November 2025 in Singapore, where the nation’s top teams will have the opportunity to display their skills on a global stage.
+            
+            To ensure that all participants are well-prepared, free training sessions are being offered to individuals, teams, schools, and organizations that register for the competition. The initiative, which also encourages educators, parents, and training institutes to participate, emphasizes skill-building and innovation as key components for success in the modern technological landscape.
+            
+            Registration is open until 1st March 2025, with interested parties encouraged to complete the online form provided by the school. Additional details and community updates are available through the dedicated WRO Sri Lanka WhatsApp group, and further inquiries can be directed to wro@burhani.edu.lk or through the official WRO website..</p>
+        </div>
+        </div>
+        </div>
+        
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Newspaper</title>
+</head>
+<body>
+    <header>
+         <div id="time"  style="font-size: 20px;"> </div>  
+         <div id="google_translate_element" style="font-size: 20px;"></div>
+            <script>
+                 function updateTime() {
+                 const date = new Date();
+                 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                 const time = date.toLocaleTimeString();
+                 const day = date.toLocaleDateString(undefined, options);
+                 document.getElementById('time').innerHTML = ` ${day}   ||  Time:${time}`;    }
+                  setInterval(updateTime, 1000);
+                  updateTime(); 
+                   
+                  function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({pageLanguage: "en"}, 'google_translate_element'); }
+            </script>
+
+            <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+            </script>
+            
+              <h1 style="font-size: 50px;">The Daily News</h1>
+              <div class="search-container">
+                  <input type="text" placeholder="Search..." id="searchBar">
+                  <button type="button" onclick="highlightSearch()">Search</button>
+              </div>
+              
+                
+          <script>
+              function highlightSearch() {
+          const query = document.getElementById("searchBar").value;
+          const content = document.getElementById("content");
+          
+          // Clear previous highlights
+          content.innerHTML = content.innerHTML.replace(/<span class="highlight">(.*?)<\/span>/g, '$1');
+      
+          if (query) {
+              const regex = new RegExp(`(${query})`, 'gi'); // Case-insensitive search
+              content.innerHTML = content.innerHTML.replace(regex, '<span class="highlight">$1</span>');
+          }
+      }
+      
+          </script>
+    </header>
+
+         <div style="text-align: right;">
+             <button id="menu-toggle">☰ Menu</button> </div>
+             <nav id="mobile-menu" style="display: none;">
+              <ul>
+                 <li><a href="dailynews.html">Home</a></li>
+                 <li><a href="latestnews.html">Latest News</a></li>
+                 <li><a href="#">World</a></li>
+                 <li><a href="#">Politics</a></li>
+                 <li><a href="sports.html">Sports</a></li>
+                 <li><a href="#">Entertainment</a></li>
+              </ul>
+             </nav>
+    
+            <script>
+                 document.getElementById('menu-toggle').addEventListener('click', function() {
+                 var menu = document.getElementById('mobile-menu');
+                 menu.style.display = menu.style.display === 'block' ? 'none' : 'block'; });
+            </script>
+
+        <div id="content">
+         <div class="news-container">
+        <div class="news-article">
+             <h2>Gampaha Wickramarachchi University undergrads haven’t received practical training  </h2>
+             <p>Gampaha Siddhayurveda Medical College was established in 1929 by Ayurveda Chakravarthi Pandit G. P. Wickramarachchi Siddharyuveda as a centre for Ayurvedic education. In 1995, the college was elevated to university status as an affiliated institution of University of Kelaniya under the Parliament Act No. 30 of 1982. Later, on March 1, 2020, it was officially designated as an Indigenous Medical University through state intervention under the Universities Act No. 16 of 1978.....</p>
+        </div>
+
+        <div class="news-article">
+             <h2>Our elephants are dying, no solution up to now</h2>
+             <p>The tragic deaths of elephants due to train collisions continue to be a major concern, with authorities acknowledging the failure of previous preventive measures......</p>
+        </div>
+        
+        <div class="news-article">
+             <h2>Former Senior DIG sentenced to 4 years RI over Vidya murder </h2>
+             <p>The Vavuniya High Court has sentenced former Senior Deputy Inspector General of Police (SDIG) Lalith Jayasinghe to four years of rigorous imprisonment for releasing a suspect in connection with the....</p>
+        </div>
+    
+        <div class="news-article">
+             <h2>Heated argument in Parliament over Deputy Minister Mahinda Jayasinghe’s recent visit to a temple</h2>
+             <p> A heated argument erupted in Parliament today when Deputy Minister Mahinda Jayasinghe came up with details on his recent visit to a Buddhist Training Centre in Kelaniya....</p>
+        </div>
+        </div>
+        </div>
+
+     <footer>
+        <script> 
+             function subscribe() {
+             let email = document.getElementById("email").value;
+                 if (email) {
+                 alert("Thank you for subscribing with " + email);
+                 } else {
+                 alert("Please enter a valid email address."); } }
+             function sendFeedback() {
+                 window.location.href = "mailto:your_email@example.com"; }
+        </script>
+
+            <div class="footer-container">
+                 <div class="feedback-content">  
+                     <span class="close-btn" onclick="closeFeedbackForm()">&times;</span>
+                     <h2 style="font-size: 25px;">Send Your Feedback</h2>
+                     <input type="text" id="name" placeholder="Your Name">
+                     <input type="email" id="feedback-email" placeholder="Your Email">
+                     <textarea id="message" placeholder="Your Message"></textarea>
+                     <button onclick="sendFeedback()">Submit</button>
+                 </div>
+                 <div class="subscribe">
+                     <h2 style="font-size: 25px;">Subscribe to Our NewsPaper</h2>
+                     <input type="email" id="email" placeholder="Enter your email">
+                     <button onclick="subscribe()">Subscribe</button>
+
+                     <div class="social-media">
+                         <h2 style="font-size: 25px;">Follow Us</h2>
+                         <a href="https://web.facebook.com/?_rdc=1&_rdr"><img src="aa3.png" alt="Facebook" style="width: 50px; height: auto; margin-right: 20px;"></a>  
+                         <a href="https://x.com/login?&mx=2"><img src="aa10.png" alt="Twitter" style="width: 50px; height: auto; margin-right: 20px;"></a> 
+                         <a href="https://www.instagram.com/accounts/login/?hl=en"><img src="aa8.png" alt="Instagram" style="width: 50px; height: auto; margin-right: 20px;"></a>  
+                         <a href="https://www.youtube.com/"><img src="aa5.png" alt="YouTube" style="width: 50px; height: auto; margin-right: 20px;"></a>
+                         <a href="https://web.telegram.org/"><img src="aa6.png" alt="Telegram" style="width: 50px; height: auto; margin-right: 20px;"></a> 
+                     </div>
+                 </div>
+                 <div class="contact-details">
+                     <h2 style="font-size: 25px;"> Contact Us <hr></h2>
+                     <p style="font-size: 20px;"><strong>Phone:</strong> +123 456 7890</p>
+                     <p style="font-size: 20px;"><strong>Email:</strong> julaxjula@gmail.com</p>
+                     <p style="font-size: 20px;"><strong>Location:</strong> 📍 123 Main Street, Jaffna</p>
+                     <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509377!2d144.95592531531748!3d-37.81720997975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d5df1a94b61%3A0x5045675218cee40!2s123+Main+Street%2C+New+York%2C+NY+10001!5e0!3m2!1sen!2sus!4v1632840190924"
+                        width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy">
+                     </iframe>
+                 </div>
+            </div>
+                <p class="copyright">© 2025 YourWebsite. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

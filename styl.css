@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: rgb(47, 5, 87);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.news-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Adjust spacing between articles */
+  padding: 20px;
+}
+
+.news-article {
+  background-color:rgb(196, 168, 219);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 15px;
+  width: 300px; /* Set a width for each article */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.news-article h2 {
+  font-size: 1.5em;
+  margin: 0 0 10px;
+}
+
+.news-article p {
+  font-size: 1em;
+  color: #555;
+}

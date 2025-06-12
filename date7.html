@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>news</title>
+</head>
+ <body>
+<header style=" background: rgb(47, 6, 85);
+color: white;
+text-align: center;
+padding: 20px 0;">
+
+    <div style="text-align: center;"> 
+    <div id="time"  style="font-size: 20px;">  </div>  
+    <div id="google_translate_element"style="font-size: 20px;"></div>
+          <script>
+              function updateTime() {
+                 const date = new Date();
+                 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                 const time = date.toLocaleTimeString();
+                 const day = date.toLocaleDateString(undefined, options);
+                 document.getElementById('time').innerHTML = ` ${day}   ||  Time:${time}`;}
+                 setInterval(updateTime, 1000);
+                 updateTime(); 
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en', // Language of your page's content
+          includedLanguages: 'en,si,ta', // Languages you want to include
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          autoDisplay: false,
+          multilanguagePage: true
+        }, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript">
+        // Force the translate UI to be in English
+        (function() {
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit&ui=en';
+          document.body.appendChild(script);
+        })();
+    
+                  // Once the page content is dynamically updated, refresh Google Translate
+         function refreshGoogleTranslate() {
+                  // Wait for Google Translate to finish loading and then re-apply it
+             if (typeof google !== "undefined" && google.translate && google.translate.TranslateElement) {
+             google.translate.TranslateElement.prototype.showBanner(); }}
+    
+      </script>
+                  <h1 style="font-size: 50px;">The Daily News</h1>
+                     
+                  
+                </div>     
+   </header>
+   <div id="content">
+    <div class="news-container">
+        <div class="news-article">
+        <h1 style="font-size: 50px; text-align: left;">  Entrepreneur  </h1>
+        <div style="display: flex; align-items: center;">
+            <img src="a14.jpeg" alt="News Image"style="width: 500px; height: auto; margin-right: 20px;"> </div>
+        <p style="font-size: 25px;"> <b>  About Entrepreneur Magazine </b>
+        </p>  <p style="font-size: 25px;">   Entrepreneur is a business and finance magazine geared toward business-minded professionals with big ideas who are interested in launching, managing and growing successful businesses. Each issue is filled with advice, insight, profiles and how-to guides for established and aspiring entrepreneurs worldwide.
+
+        </p>  <p style="font-size: 25px;">   Business-savvy individuals with a wide range of experience and expertise will find solutions and inspirations to tackle business challenges in each issue of Entrepreneur. From financial advice for start-up companies to success stories from millionaire business founders, readers will discover strategies and planning tips to smoothly start and manage a business.
+
+        </p>  <p style="font-size: 25px;">  The magazine spans a wide range of business topics, which will appeal to inventors, risk-takers and those with entrepreneurial traits. Learn from successful entrepreneurs who share secrets of their success from the ground up. Find technology insight as it pertains to the business climate. Get advice about business culture, including relationships with customers and employees. Gain knowledge from financial experts. Read exciting and inspirational stories from likeminded small business founders.
+
+        </p>  <p style="font-size: 25px;">  Readers will also find features dedicated to business travel, answer on tough ethics questions and other company issues, and several special editions throughout the year.
+
+        </p>  <p style="font-size: 25px;">  Business-minded professionals with an entrepreneurial spirit will love a subscription to Entrepreneur! Subscribe today for inspiration, strategy and expert advice on a variety of small business topics.
+
+        </p>  <p style="font-size: 25px;">  Cover price is $6.99 an issue, current renewal rate is 6 issues for $19.97. Entrepreneur, published by Entrepreneur Magazine, currently publishes 6 times annually. Your first issue mails in 6-12 weeks.
+
+        </p>  <p style="font-size: 25px;"> Frequency of all magazines subject to change without notice. We reserve the right to substitute gifts of equal or greater value. Applicable sales tax will be added. U.S. orders only. Offer void in Vermont.
+        </p>
+    </div>
+    </div>
+    </div>
+    </body>
+</html>
